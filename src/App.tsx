@@ -16,7 +16,6 @@ import Dashboard from './Dashboard';
 
 //import vite process env
 const customRpcUrl = import.meta.env.VITE_REACT_APP_CUSTOM_RPC_URL;
-console.log("url", customRpcUrl);
 const App: FC = () => {
 
     const network = WalletAdapterNetwork.Mainnet;

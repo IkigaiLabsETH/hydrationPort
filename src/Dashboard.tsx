@@ -59,7 +59,9 @@ const Dashboard = () => {
             </div>
         ) : (
             <div className='top-hero'>
-                <img className="hydrationport-logo" src={hydrationPort} alt="hydrationport" />
+                <div className='hydrationport-logo'>
+                <h1 className='hydrationport-text'>hydrationport</h1>
+                </div>
                 <div className="card">
                     <h2>
                         Liquidate your NFTs into your favorite token today!
