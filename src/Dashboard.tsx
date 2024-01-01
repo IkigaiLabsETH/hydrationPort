@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
-const hydrationPort = new URL('./assets/hydrationPort.png', import.meta.url).href;
 import { fetchUserNFTs } from './api/metaplex';
 import { Metadata, Nft, Sft } from "@metaplex-foundation/js";
 import { useSolanaConnection } from './context/SolanaConnectionContext';
