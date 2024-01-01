@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import hydrationPort from './assets/hydrationPort.png';
 import { fetchUserNFTs } from './api/metaplex';
 import { Metadata, Nft, Sft } from "@metaplex-foundation/js";
 import { useSolanaConnection } from './context/SolanaConnectionContext';
-import { fetchHighestBid } from './api/magicEden';
 import { PublicKey } from '@solana/web3.js';
 import Swap from './Swap';
 

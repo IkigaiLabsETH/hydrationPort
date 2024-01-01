@@ -30,6 +30,7 @@ export const liquidateNFT = async (nftMintAddress: string, desiredCoin: string, 
 
     try {
         const sellResponse = await axios.request(sellOptions);
+        console.log("sell response", sellResponse);
 
         // TODO: Process the sellResponse to actually sell the NFT
     } catch (error) {
@@ -46,7 +47,7 @@ export const liquidateNFT = async (nftMintAddress: string, desiredCoin: string, 
 
     // Get the route for a swap
     const quoteResponse = await (
-      await fetch(`https://quote-api.jup.ag/v6/quote?inputMint=So11111111111111111111111111111111111111112&outputMint=${desiredCoin}&amount=${highestBidInSol * 1_000_000_000}&slippageBps=50`)
+      await fetch(`https://quote-api.jup.ag/v6/quote?inputMint=So11111111111111111111111111111111111111112&outputMint=${desiredCoin}&amount=${bidData.highestBidInLamports * 1_000_000_000}&slippageBps=50`)
     ).json();
 
     // Get the serialized transactions to perform the swap
@@ -67,6 +68,7 @@ export const liquidateNFT = async (nftMintAddress: string, desiredCoin: string, 
     // Deserialize the transaction
     const swapTransactionBuf = Buffer.from(swapTransaction, 'base64');
     var transaction = VersionedTransaction.deserialize(swapTransactionBuf);
+    console.log("transaction", transaction);
 
 
     const rawTransaction = signedTransaction.serialize();

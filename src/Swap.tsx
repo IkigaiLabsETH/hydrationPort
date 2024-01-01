@@ -52,7 +52,7 @@ const Swap: React.FC<SwapProps> = ({ nft, setNft }) => {
                 <h2>Swap Result</h2>
                 <p>You could swap {nft.name} for {coinAmount} of {coin} right now.</p>
                 <button onClick={reset}>Back</button>
-                {/* <button onClick={handleLiquidate}>Confirm</button> */}
+                <button onClick={handleLiquidate}>Confirm</button>
             </div>
         );
     }

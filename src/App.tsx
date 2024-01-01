@@ -1,5 +1,5 @@
-import React, { FC, useMemo, useEffect } from 'react';
-import { ConnectionProvider, WalletProvider, useWallet } from '@solana/wallet-adapter-react';
+import { FC, useMemo } from 'react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { SolanaConnectionContext } from './context/SolanaConnectionContext';
@@ -9,7 +9,6 @@ import {
     WalletModalProvider,
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
-import { clusterApiUrl } from '@solana/web3.js';
 
 import '@solana/wallet-adapter-react-ui/styles.css';
 import './App.css'
