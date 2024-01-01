@@ -2,10 +2,9 @@ import { fetchHighestBid } from '../api/magicEden';
 import { fetchCoinPrice } from '../api/jupiter';
 import axios from 'axios';
 import { Connection, VersionedTransaction } from '@solana/web3.js';
-import { Wallet } from '@solana/wallet-adapter-react';
 import fetch from 'cross-fetch';
 
-export const liquidateNFT = async (nftMintAddress: string, desiredCoin: string, connection: Connection, wallet: Wallet, publicKey: string, signedTransaction: any) => {
+export const liquidateNFT = async (nftMintAddress: string, desiredCoin: string, connection: Connection, publicKey: string, signedTransaction: any) => {
     // Fetch the highest bid for the NFT
     const bidData = await fetchHighestBid(nftMintAddress);
     if (bidData === undefined) {

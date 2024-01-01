@@ -25,7 +25,7 @@ const Swap: React.FC<SwapProps> = ({ nft, setNft }) => {
 
     const handleLiquidate = async () => {
         if (nft.mintAddress && coin && connection && wallet && publicKey && signTransaction) {
-            await liquidateNFT(nft.mintAddress.toString(), coin, connection, wallet, publicKey.toString(), signTransaction);
+            await liquidateNFT(nft.mintAddress.toString(), coin, connection, publicKey.toString(), signTransaction);
         }
     };
 
